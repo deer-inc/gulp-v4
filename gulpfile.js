@@ -36,7 +36,7 @@ function css() {
 
 function image() {
   return src(path.image)
-    .pipe(imagemin())
+    .pipe(imagemin([]))
     .pipe(dest('dist/imgs'))
     .pipe(browserSync.stream());
 }
