@@ -10,9 +10,9 @@ const imagemin = require('gulp-imagemin');
 
 const path = {
   pug: 'src/pug/**/*.pug',
-  js: 'src/scripts/**/*.js',
   scss: 'src/scss/**/*.scss',
-  image: 'src/images/**/*'
+  image: 'src/images/**/*',
+  js: 'src/js/**/*.js',
 }
 
 function html() {
@@ -42,7 +42,7 @@ function image() {
 }
 
 function js() {
-  return src([path.js, '!**/*_*'], { sourcemaps: true })
+  return src(path.js, { sourcemaps: true })
     .pipe(plumber())
     .pipe(concat('app.min.js'))
     .pipe(dest('dist/js', { sourcemaps: true }))
