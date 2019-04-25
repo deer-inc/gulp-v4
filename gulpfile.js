@@ -72,8 +72,11 @@ watch(['./dist/**'], function(cb) {
   cb();
 });
 
+const build = parallel(html, css, js, image);
+
+exports.build = build;
 exports.server = server;
 exports.default = series(
-  parallel(html, css, js, image),
+  build,
   server
 );
