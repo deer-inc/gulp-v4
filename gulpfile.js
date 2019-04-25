@@ -71,6 +71,11 @@ function watchFiles() {
     cb();
   });
 
+  watch([path.image], function(cb) {
+    image();
+    cb();
+  });
+
   watch(['./dist/**/*.html'], function(cb) {
     browserSync.reload()
     cb();
