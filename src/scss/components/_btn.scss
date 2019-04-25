@@ -1,12 +1,19 @@
+.btns {
+  margin-top: 24px;
+  .btn + .btn {
+    margin-left: 16px;
+  }
+}
+
 .btn {
-  background: #000;
-  border: 2px solid #000;
+  background: $color-primary;
+  border: 2px solid $color-primary;
   color: #ffffff;
   padding: 16px 40px;
   border-radius: 30px;
   display: inline-block;
   &--border {
     background: none;
-    color: #000000;
+    color: $color-primary;
   }
 }

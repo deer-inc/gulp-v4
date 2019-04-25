@@ -2,4 +2,9 @@
   background: url(/imgs/hero.jpg) center/cover;
   padding: 200px 0;
   color: #ffffff;
+  &__msg {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
 }

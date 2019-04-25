@@ -31,12 +31,14 @@ function css() {
     .pipe(sass())
     .pipe(minifyCSS())
     .pipe(dest('dist'))
+    .pipe(browserSync.stream());
 }
 
 function image() {
   return src(path.image)
     .pipe(imagemin())
     .pipe(dest('dist/imgs'))
+    .pipe(browserSync.stream());
 }
 
 function js() {
@@ -44,6 +46,7 @@ function js() {
     .pipe(plumber())
     .pipe(concat('app.min.js'))
     .pipe(dest('dist/js', { sourcemaps: true }))
+    .pipe(browserSync.stream());
 }
 
 function server() {
@@ -52,31 +55,34 @@ function server() {
   })
 }
 
-watch([path.pug], function(cb) {
-  html();
-  cb();
-});
+function watchFiles() {
+  watch([path.pug], function(cb) {
+    html();
+    cb();
+  });
 
-watch([path.scss], function(cb) {
-  css();
-  cb();
-});
+  watch([path.scss], function(cb) {
+    css();
+    cb();
+  });
 
-watch([path.js], function(cb) {
-  js();
-  cb();
-});
+  watch([path.js], function(cb) {
+    js();
+    cb();
+  });
 
-watch(['./dist/**'], function(cb) {
-  browserSync.reload({stream: true})
-  cb();
-});
+  watch(['./dist/**/*.html'], function(cb) {
+    browserSync.reload()
+    cb();
+  });
+}
 
 const build = parallel(html, css, js, image);
 
 exports.build = build;
+exports.watchFiles = watchFiles;
 exports.server = server;
 exports.default = series(
   build,
-  server
+  parallel(server, watchFiles)
 );

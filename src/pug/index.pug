@@ -3,19 +3,67 @@ extends /lib/layouts/_base
 block content
   .hero
     .container
-      h1 Pugによる静的サイト設計
+      h1.hero__msg Pugによる静的サイト設計
   section.section
     .container
       h2.hdg 見出し
       p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore incidunt necessitatibus voluptates, labore nihil fugit a quasi totam recusandae ipsam, repellat nesciunt dolores sequi exercitationem, modi cumque? Nesciunt, ex beatae?
-      a.btn(href="") ボタン
+
+      .row
+        .col.col--4
+          .card
+            figure.card__thumbnail(style="background-image: url(/imgs/card-1.jpg)")
+            .card__body
+              h2.card__title テスト
+              p.card__description Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptatem excepturi quisquam. Earum accusantium quia inventore amet, minus repellat dolore magni aliquam tenetur sunt dolores dignissimos nesciunt non sed quae.
+        .col.col--4
+          .card
+            figure.card__thumbnail(style="background-image: url(/imgs/card-2.jpg)")
+            .card__body
+              h2.card__title テスト
+              p.card__description Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptatem excepturi quisquam. Earum accusantium quia inventore amet, minus repellat dolore magni aliquam tenetur sunt dolores dignissimos nesciunt non sed quae.
+        .col.col--4
+          .card
+            figure.card__thumbnail(style="background-image: url(/imgs/card-3.jpg)")
+            .card__body
+              h2.card__title テスト
+              p.card__description Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptatem excepturi quisquam. Earum accusantium quia inventore amet, minus repellat dolore magni aliquam tenetur sunt dolores dignissimos nesciunt non sed quae.
+
+      .btns
+        a.btn(href="") ボタン
   section.section
     .container
       h2.hdg.hdg--border 見出し
       p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore incidunt necessitatibus voluptates, labore nihil fugit a quasi totam recusandae ipsam, repellat nesciunt dolores sequi exercitationem, modi cumque? Nesciunt, ex beatae?
-      a.btn.btn--border(href="") ボタン
+      .btns
+        a.btn(href="") ボタン
+        a.btn.btn--border(href="") ボタン
   section.section
     .container
-      h2.hdg 見出し
-      p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore incidunt necessitatibus voluptates, labore nihil fugit a quasi totam recusandae ipsam, repellat nesciunt dolores sequi exercitationem, modi cumque? Nesciunt, ex beatae?
-      a.btn(href="") ボタン
+      h2.hdg グリッド
+      .row
+        .col.col--4
+          .card
+            .card__body
+              h3.card__title col-4
+              p.card__description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro ex repellat reprehenderit soluta. Quae a, expedita facilis vero iure deleniti laudantium est. Exercitationem nulla architecto delectus maxime non eum nemo.
+        .col.col--4
+          .card
+            .card__body
+              h3.card__title col-4
+              p.card__description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro ex repellat reprehenderit soluta. Quae a, expedita facilis vero iure deleniti laudantium est. Exercitationem nulla architecto delectus maxime non eum nemo.
+        .col.col--4
+          .card
+            .card__body
+              h3.card__title col-4
+              p.card__description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro ex repellat reprehenderit soluta. Quae a, expedita facilis vero iure deleniti laudantium est. Exercitationem nulla architecto delectus maxime non eum nemo.
+        .col.col--6
+          .card
+            .card__body
+              h3.card__title col-6
+              p.card__description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro ex repellat reprehenderit soluta. Quae a, expedita facilis vero iure deleniti laudantium est. Exercitationem nulla architecto delectus maxime non eum nemo.
+        .col.col--6
+          .card
+            .card__body
+              h3.card__title col-6
+              p.card__description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro ex repellat reprehenderit soluta. Quae a, expedita facilis vero iure deleniti laudantium est. Exercitationem nulla architecto delectus maxime non eum nemo.
