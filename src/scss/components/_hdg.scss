@@ -1,0 +1,9 @@
+.hdg {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  &--border {
+    padding: 8px 16px;
+    border-left: 4px solid #000;
+  }
+}

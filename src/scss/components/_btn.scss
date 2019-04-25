@@ -1,0 +1,12 @@
+.btn {
+  background: #000;
+  border: 2px solid #000;
+  color: #ffffff;
+  padding: 16px 40px;
+  border-radius: 30px;
+  display: inline-block;
+  &--border {
+    background: none;
+    color: #000000;
+  }
+}
